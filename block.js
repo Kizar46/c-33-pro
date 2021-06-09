@@ -11,6 +11,8 @@ class Block{
         World.add(world, this.body);
       }
       display(){
+        
+        if(this.body.speed<3){
         push();
         //translate(this.body.position.x, this.body.position.y);
         var pos =this.body.position;
@@ -19,5 +21,9 @@ class Block{
         rect(pos.x, pos.y, this.width, this.height);
         
         pop();
+        }
+        else{
+          World.remove(world,this.body)
+        }
       }
   }
